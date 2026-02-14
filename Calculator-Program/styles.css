@@ -1,0 +1,431 @@
+/* ===== CSS Variables ===== */
+:root {
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --dark-bg: #1a1a2e;
+    --card-bg: #16213e;
+    --display-bg: #0f3460;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --btn-number: #2d3748;
+    --btn-operator: #4a5568;
+    --btn-function: #5a67d8;
+    --btn-equals: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --btn-hover: #4a5568;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+/* ===== Container ===== */
+.container {
+    width: 100%;
+    max-width: 420px;
+    max-height: 95vh;
+    overflow-y: auto;
+}
+
+/* ===== Calculator ===== */
+.calculator {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 15px;
+    box-shadow: 0 20px 60px var(--shadow);
+    backdrop-filter: blur(10px);
+    width: 100%;
+}
+
+/* ===== Header ===== */
+.calculator-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.calculator-header h2 {
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.mode-button {
+    background: var(--btn-function);
+    color: var(--text-primary);
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mode-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(90, 103, 216, 0.4);
+}
+
+/* ===== Display ===== */
+.display-container {
+    background: var(--display-bg);
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    text-align: right;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.display-secondary {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    min-height: 20px;
+    margin-bottom: 5px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.display-main {
+    color: var(--text-primary);
+    font-size: 1.8rem;
+    font-weight: 600;
+    min-height: 45px;
+    overflow-x: auto;
+    white-space: nowrap;
+    word-break: break-all;
+}
+
+/* Custom scrollbar for display */
+.display-main::-webkit-scrollbar,
+.display-secondary::-webkit-scrollbar {
+    height: 3px;
+}
+
+.display-main::-webkit-scrollbar-thumb,
+.display-secondary::-webkit-scrollbar-thumb {
+    background: var(--text-secondary);
+    border-radius: 2px;
+}
+
+/* ===== Memory Display ===== */
+.memory-display {
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-bottom: 10px;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+#memory-indicator {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* ===== Buttons Grid ===== */
+.buttons {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 6px !important;
+}
+
+/* ===== Button Base Styles ===== */
+.btn {
+    background: var(--btn-number);
+    color: var(--text-primary);
+    border: none;
+    border-radius: 8px;
+    padding: 14px 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    min-height: 45px;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Button Types ===== */
+.btn-number {
+    background: var(--btn-number);
+}
+
+.btn-number:hover {
+    background: #3d4758;
+}
+
+.btn-operator {
+    background: var(--btn-operator);
+    color: #fbbf24;
+}
+
+.btn-operator:hover {
+    background: #5a6778;
+}
+
+.btn-function {
+    background: var(--btn-function);
+    font-size: 0.85rem;
+}
+
+.btn-function:hover {
+    background: #6b7ce0;
+}
+
+.btn-memory {
+    background: #059669;
+    font-size: 0.85rem;
+}
+
+.btn-memory:hover {
+    background: #10b981;
+}
+
+.btn-clear {
+    background: #dc2626;
+}
+
+.btn-clear:hover {
+    background: #ef4444;
+}
+
+.btn-equals {
+    background: var(--btn-equals);
+    grid-column: span 2;
+    font-size: 1.3rem;
+}
+
+.btn-equals:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(102, 126, 234, 0.4);
+}
+
+.btn-zero {
+    grid-column: span 2;
+}
+
+/* ===== Footer ===== */
+.calculator-footer {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.calculator-footer p {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+}
+
+/* ===== Animations ===== */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.error {
+    animation: shake 0.3s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.calculating {
+    animation: pulse 0.5s ease;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .calculator {
+        padding: 12px;
+    }
+
+    .calculator-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .display-main {
+        font-size: 1.6rem;
+    }
+
+    .btn {
+        padding: 12px 6px;
+        font-size: 0.9rem;
+        min-height: 42px;
+    }
+
+    .btn-function,
+    .btn-memory {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    .calculator {
+        padding: 10px;
+        border-radius: 12px;
+    }
+
+    .buttons {
+        gap: 5px !important;
+    }
+
+    .btn {
+        padding: 10px 4px;
+        font-size: 0.85rem;
+        min-height: 40px;
+        border-radius: 6px;
+    }
+
+    .display-main {
+        font-size: 1.5rem;
+        min-height: 40px;
+    }
+
+    .display-container {
+        padding: 10px 12px;
+    }
+
+    .calculator-header h2 {
+        font-size: 1rem;
+    }
+
+    .btn-function,
+    .btn-memory {
+        font-size: 0.75rem;
+        padding: 8px 3px;
+    }
+
+    .btn-equals {
+        font-size: 1.2rem;
+    }
+
+    .calculator-footer p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        padding: 8px;
+    }
+
+    .buttons {
+        gap: 4px !important;
+    }
+
+    .btn {
+        padding: 9px 3px;
+        font-size: 0.8rem;
+        min-height: 38px;
+    }
+
+    .btn-function,
+    .btn-memory {
+        font-size: 0.7rem;
+    }
+
+    .display-main {
+        font-size: 1.4rem;
+    }
+}
+
+/* ===== Landscape Mode ===== */
+@media (max-height: 600px) and (orientation: landscape) {
+    .container {
+        max-height: 98vh;
+    }
+
+    .calculator {
+        padding: 8px;
+    }
+
+    .calculator-header {
+        margin-bottom: 8px;
+    }
+
+    .calculator-header h2 {
+        font-size: 0.95rem;
+    }
+
+    .display-container {
+        padding: 8px 12px;
+        margin-bottom: 6px;
+    }
+
+    .display-main {
+        font-size: 1.4rem;
+        min-height: 35px;
+    }
+
+    .memory-display {
+        padding: 4px 8px;
+        margin-bottom: 6px;
+        min-height: 24px;
+    }
+
+    .buttons {
+        gap: 4px !important;
+    }
+
+    .btn {
+        padding: 8px 4px;
+        font-size: 0.8rem;
+        min-height: 36px;
+    }
+
+    .btn-function,
+    .btn-memory {
+        font-size: 0.7rem;
+    }
+
+    .calculator-footer {
+        margin-top: 8px;
+    }
+
+    .calculator-footer p {
+        font-size: 0.65rem;
+    }
+}
+
+/* ===== Dark Mode Toggle (Future Enhancement) ===== */
+.dark-mode {
+    --dark-bg: #ffffff;
+    --card-bg: #f8fafc;
+    --display-bg: #e2e8f0;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+}
