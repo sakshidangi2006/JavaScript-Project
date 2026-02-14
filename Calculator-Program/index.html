@@ -7,7 +7,103 @@
     <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    
+    <div class = "container">
+        <div class = "calculator" >
+
+            <!--Calculator-Header-->
+            <div class="calculator-header">
+            <h2> Scientific Calculator</h2>
+         <div class = "mode-toggle">
+            <button class = "mode-button" id="mode-btn">DEG</button>
+         </div>
+         </div>
+
+           <!--Calculator-Display-->
+         <div class="display-container">
+            <div class="display-secondary" id="history">0</div>
+            <div class="display-main" id="display">0</div>
+         </div>
+
+         <!--Calculator-Memory-->
+         <div class="memory-display" id="memory-display">
+            <span id="memory-indicator"></span>
+         </div>
+         
+        <!--Calculator-Buttons-->
+        <div class="buttons">
+
+            <!--Row 1: Memory & Clear-->
+            <button class="btn btn-memory" onclick="memoryClear()">MC</button>
+            <button class="btn btn-memory" onclick="memoryRecall()">MR</button>
+            <button class="btn btn-memory" onclick="memoryAdd()">M+</button>
+            <button class="btn btn-memory" onclick="memorySubtract()">M-</button>
+            <button class="btn btn-memory" onclick="clearAll()">AC</button>
+            <button class="btn btn-memory" onclick="ClearEntry()">CE</button>
+
+            <!--Row 2: Scientific-Functions 1-->
+            <button class="btn btn-function" onclick="insertFunction('Math.sin')">sin</button>
+            <button class="btn btn-function" onclick="insertFunction('Math.cos')">cos</button>
+            <button class="btn btn-function" onclick="insertFunction('Math.tan')">tan</button>
+            <button class="btn btn-function" onclick="insertFunction('Math.log10')">log</button>
+            <button class="btn btn-function" onclick="insertFunction('Math.log')">log</button>
+            <button class="btn btn-operator" onclick="insertOperator('(')">(</button>
+            
+            <!--Row 3: Scientific-Functions 2-->
+            <button class="btn btn-function" onclick="insertFunction('Math.asin')">sin⁻¹</button>
+            <button class="btn btn-function" onclick="insertFunction('Math.acos')">cos⁻¹</button>
+            <button class="btn btn-function" onclick="insertFunction('Math.atan')">tan⁻¹</button>
+            <button class="btn btn-value" onclick="insertValue('Math.PI')">π</button>
+            <button class="btn btn-value" onclick="insertValue('Math.E')">e</button>
+            <button class="btn btn-operator" onclick="insertOperator(')')">)</button>
+        </div>
+
+        <!--Row 4: Power & Root-Functions-->
+        <botton class="btn btn-operator" onclick="insertOperator('^')">x²</botton>
+        <botton class="btn btn-operator" onclick="insertOperator('**')">xʸ</botton>
+        <botton class="btn btn-functions" onclick="insertFunction('Math.sqrt')">√</botton>
+        <botton class="btn btn-functions" onclick="insertFunction('Math.cbrt')">∛</botton>
+        <botton class="btn btn-functions" onclick="factorial()">!</botton>
+        <botton class="btn btn-operator" onclick="insertOperator('%')">%</botton>
+
+           <!--Row 5: Number & Operations-->
+           <buttons class="btn btn-number" onclick="insertNumber('7')">7</buttons>
+           <buttons class="btn btn-number" onclick="insertNumber('8')">8</buttons>
+           <buttons class="btn btn-number" onclick="insertNumber('9')">9</buttons>
+           <buttons class="btn btn-operator" onclick="insertOperator('/')">÷</buttons>
+           <buttons class="btn btn-operator" onclick="backspace()">⌫</buttons>
+           <buttons class="btn btn-clear" onclick="clearAll()">c</buttons>
+           
+           <!--Row 6: Number & Operations-->
+           <buttons class="btn btn-number" onclick="insertNumber('4')">4</buttons>
+           <buttons class="btn btn-number" onclick="insertNumber('5')">5</buttons>
+           <buttons class="btn btn-number" onclick="insertNumber('6')">6</buttons>
+           <buttons class="btn btn-operator" onclick="insertOperator('*')">x</buttons>
+           <buttons class="btn btn-function" onclick="reciprocal()">1/x</buttons>
+           <buttons class="btn btn-function" onclick="toggleSign()">±</buttons>
+           
+           <!--Row 7: Number & Operations-->
+           <button class="btn btn-number" onclick="insertNumber('1')">1</button>
+           <button class="btn btn-number" onclick="insertNumber('2')">2</button>
+           <button class="btn btn-number" onclick="insertNumber('3')">3</button>
+           <button class="btn btn-operator" onclick="insertOperator('-')">-</button>
+           <button class="btn btn-function" onclick="insertFunction('Math.abs')">|x|</button>
+           <button class="btn btn-function" onclick="insertValue('Math.random()')">RND</button>
+
+           <!--Row 7: Number & Operations-->
+           <button class="btn btn-number btn-zero" onclick="insertNumber('0')">0</button>
+           <button class="btn btn-number" onclick="insertNumber('.')">.</button>
+           <button class="btn btn-operator" onclick="insertOperator('+')">+</button>
+           <button class="btn btn-equals" onclick="calculate()">=</button>
+            </div>
+
+             <!-- Footer -->
+            <div class="calculator-footer">
+                <p>Made with ❤️ by Sakshi Dangi</p>
+            </div>
+
+        </div>
+    </div>
+
     <script src = "script.js"></script>
 </body>
 </html>
