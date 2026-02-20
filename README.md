@@ -74,9 +74,9 @@ A simple yet elegant temperature conversion tool that converts between Celsius, 
 
 ---
 
-### 3.[Coming Soon] Scientific Calculator 🧮
+### 3.Scientific Calculator 🧮
 
-**[Live Demo](#)** | **[Source Code](./Scientific-Calculator/)**
+**[Live Demo](#)** | **[Source Code](./Calculator-Program/)**
 
 A fully-functional scientific calculator with advanced mathematical operations.
 
