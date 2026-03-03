@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Holi! (Don't wear white)</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="gradient-orb orb-1"></div>
+  <div class="gradient-orb orb-2"></div>
+  <div class="gradient-orb orb-3"></div>
+
+  <div id="floating-colors" class="floating-colors"></div>
+
+  <canvas id="color-canvas"></canvas>
+  <canvas id="splash-canvas"></canvas>
+
+  <div id="joke-popup" class="joke-popup"></div>
+
+  <main class="main-content">
+    <div class="year-badge">
+      <span>Official Permission to be Messy</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      </svg>
+    </div>
+    
+    <h1 class="display-font hero-title">Happy Holi!</h1>
+    
+    <div class="message-card">
+      <p class="message-text">
+        May your life be as colorful as a rainbow and your hair <span class="highlight">NOT permanently green</span> for the next 3 months. 
+        Remember: If you can't wash it off, it's called "fashion."
+      </p>
+      
+      <div class="color-palette">
+        <button class="color-btn pink" data-color="#ff6b9d" aria-label="Pink color"></button>
+        <button class="color-btn yellow" data-color="#ffd93d" aria-label="Yellow color"></button>
+        <button class="color-btn green" data-color="#6bcb77" aria-label="Green color"></button>
+        <button class="color-btn blue" data-color="#4d96ff" aria-label="Blue color"></button>
+        <button class="color-btn purple" data-color="#c77dff" aria-label="Purple color"></button>
+        <button class="color-btn orange" data-color="#ff9f45" aria-label="Orange color"></button>
+      </div>
+      
+      <div class="button-group">
+        <button class="play-btn" id="celebrate-btn">Unleash Chaos</button>
+      </div>
+    </div>
+  </main>
+
+  <div class="instruction">
+    Click anywhere to splash color 
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
