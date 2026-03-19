@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e1e2f, #3a0d0d);
+    font-family: Arial, sans-serif;
+}
+
+/* Card Container */
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Joke Box */
+.joke-box {
+    min-height: 100px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    font-size: 1.1em;
+    white-space: pre-line;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #ff4d4d;
+    color: white;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e60000;
+}
